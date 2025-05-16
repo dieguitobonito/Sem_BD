@@ -1,0 +1,364 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum} % Para texto de ejemplo (puedes eliminarlo)
+% Remover numeración en secciones
+\setcounter{secnumdepth}{-1} % Place this in the preamble
+
+% Set sans-serif font
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Remover numeración en indice
+\usepackage{titlesec}
+\usepackage{tocloft}
+\renewcommand{\cftsecnumwidth}{0pt}   % Hide section numbers in TOC
+\renewcommand{\cftsecaftersnum}{}     % Remove space after section numbers
+
+% Configuración básica de la página
+\geometry{a4paper, margin=2.5cm}
+
+% Comando para citar
+\newcommand{\miCita}[1]{\cite{#1}}
+
+% Configuración de las referencias
+\usepackage[natbibapa]{apacite}
+\renewcommand{\bibliographytypesize}{\small}
+\AtBeginDocument{\renewcommand{\refname}{Referencias}}
+
+\usepackage{graphicx}
+\graphicspath{{/home/gomacodev/Documents/7/Sem_BD/report_4/images/}}
+
+\usepackage{hyperref}
+
+\begin{document}
+\begin{titlepage}
+\end{titlepage}
+
+% ------------------------------------------------------------------------------
+\begin{titlepage}
+\begin{center}
+ {\Huge\bfseries Report 4\\}
+ \vspace{1cm}
+
+ {\huge 12/04/25\\}
+ \vspace{2cm}
+
+ {\Large\bfseries Diego Martín Domínguez Hernández}\\[5pt]
+ \vspace{2cm}
+
+ {\Large Seminario de bases de datos}\\[5pt]
+ \vspace{2cm}
+
+ {\Large Prof. José Antonio Aviña Mendez}\\[5pt]
+\end{center}
+\end{titlepage}
+
+\section{Introducción}
+Tomar en cuenta el caso de estudio en la presentación, crear un diagrama
+entidad-relación y un diccionario de datos del mismo.
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Diagrama entidad relación}
+\includegraphics[width=\textwidth]{er}
+\newpage
+
+\section{Diccionario de datos}
+\begin{table}[ht]
+\centering
+\caption{Tabla: USUARIO}
+\begin{tabular}{|l|l|p{4.5cm}|p{3.5cm}|}
+\hline
+\textbf{Atributo} & \textbf{Tipo} & \textbf{Descripción} &
+\textbf{Restricciones} \\
+\hline
+UsuarioID & INT & Identificador único del usuario & Llave primaria \\
+\hline
+Nombre & VARCHAR(50) & Nombre del usuario & NOT NULL \\
+\hline
+Apellido & VARCHAR(50) & Apellido del usuario & NOT NULL \\
+\hline
+RFC & VARCHAR(13) & RFC del usuario para facturación & NOT NULL, UNIQUE \\
+\hline
+Direccion & VARCHAR(200) & Dirección completa del usuario & NOT NULL \\
+\hline
+Email & VARCHAR(100) & Correo electrónico del usuario & NOT NULL, UNIQUE \\
+\hline
+FechaRegistro & DATE & Fecha de registro en la plataforma & NOT NULL \\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\begin{table}[ht]
+\centering
+\caption{Tabla: MEMBRESIA}
+\begin{tabular}{|l|l|p{4.5cm}|p{3.5cm}|}
+\hline
+\textbf{Atributo} & \textbf{Tipo} & \textbf{Descripción} &
+\textbf{Restricciones} \\
+\hline
+MembresiaID & INT & Identificador único de la membresía & Llave primaria \\
+\hline
+UsuarioID & INT & ID del usuario que contrata la membresía & Llave foránea, NOT
+NULL \\
+\hline
+Tipo & VARCHAR(20) & Tipo de membresía (Standard, Extendida, Premium) & NOT
+NULL, CHECK (Tipo IN ('Standard','Extendida','Premium')) \\
+\hline
+Costo & DECIMAL(10,2) & Costo mensual de la membresía & NOT NULL \\
+\hline
+FechaInicio & DATE & Fecha de inicio de la membresía & NOT NULL \\
+\hline
+FechaFin & DATE & Fecha de finalización de la membresía & NOT NULL \\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\begin{table}[ht]
+\centering
+\caption{Tabla: TARJETA}
+\begin{tabular}{|l|l|p{4.5cm}|p{3.5cm}|}
+\hline
+\textbf{Atributo} & \textbf{Tipo} & \textbf{Descripción} &
+\textbf{Restricciones} \\
+\hline
+TarjetaID & INT & Identificador único de la tarjeta & Llave primaria \\
+\hline
+UsuarioID & INT & ID del usuario dueño de la tarjeta & Llave foránea, NOT NULL
+\\
+\hline
+Numero & VARCHAR(16) & Número de la tarjeta & NOT NULL \\
+\hline
+Tipo & VARCHAR(20) & Tipo de tarjeta (VISA, MASTERCARD, AMEX) & NOT NULL, CHECK
+(Tipo IN ('VISA','MASTERCARD','AMEX')) \\
+\hline
+FechaExpiracion & DATE & Fecha de expiración de la tarjeta & NOT NULL \\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\begin{table}[ht]
+\centering
+\caption{Tabla: PELICULA}
+\begin{tabular}{|l|l|p{4.5cm}|p{3.5cm}|}
+\hline
+\textbf{Atributo} & \textbf{Tipo} & \textbf{Descripción} &
+\textbf{Restricciones} \\
+\hline
+PeliculaID & INT & Identificador único de la película & Llave primaria \\
+\hline
+Titulo & VARCHAR(100) & Título de la película & NOT NULL \\
+\hline
+Duracion & INT & Duración en minutos & NOT NULL \\
+\hline
+FechaEstreno & DATE & Fecha de estreno de la película & NOT NULL \\
+\hline
+EsEstreno & BOOLEAN & Indica si la película es estreno y tiene costo adicional &
+NOT NULL, DEFAULT FALSE \\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\begin{table}[ht]
+\centering
+\caption{Tabla: SERIE}
+\begin{tabular}{|l|l|p{4.5cm}|p{3.5cm}|}
+\hline
+\textbf{Atributo} & \textbf{Tipo} & \textbf{Descripción} &
+\textbf{Restricciones} \\
+\hline
+SerieID & INT & Identificador único de la serie & Llave primaria \\
+\hline
+Titulo & VARCHAR(100) & Título de la serie & NOT NULL \\
+\hline
+FechaEstreno & DATE & Fecha de estreno de la serie & NOT NULL \\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\begin{table}[ht]
+\centering
+\caption{Tabla: EPISODIO}
+\begin{tabular}{|l|l|p{4.5cm}|p{3.5cm}|}
+\hline
+\textbf{Atributo} & \textbf{Tipo} & \textbf{Descripción} &
+\textbf{Restricciones} \\
+\hline
+EpisodioID & INT & Identificador único del episodio & Llave primaria \\
+\hline
+SerieID & INT & ID de la serie a la que pertenece & Llave foránea, NOT NULL \\
+\hline
+Titulo & VARCHAR(100) & Título del episodio & NOT NULL \\
+\hline
+Duracion & INT & Duración en minutos & NOT NULL \\
+\hline
+NumeroTemporada & INT & Número de temporada & NOT NULL \\
+\hline
+NumeroEpisodio & INT & Número del episodio en la temporada & NOT NULL \\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\begin{table}[ht]
+\centering
+\caption{Tabla: CATEGORIA}
+\begin{tabular}{|l|l|p{4.5cm}|p{3.5cm}|}
+\hline
+\textbf{Atributo} & \textbf{Tipo} & \textbf{Descripción} &
+\textbf{Restricciones} \\
+\hline
+CategoriaID & INT & Identificador único de la categoría & Llave primaria \\
+\hline
+Nombre & VARCHAR(50) & Nombre de la categoría (acción, terror, etc.) & NOT NULL,
+UNIQUE \\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\begin{table}[ht]
+\centering
+\caption{Tabla: ACTOR}
+\begin{tabular}{|l|l|p{4.5cm}|p{3.5cm}|}
+\hline
+\textbf{Atributo} & \textbf{Tipo} & \textbf{Descripción} &
+\textbf{Restricciones} \\
+\hline
+ActorID & INT & Identificador único del actor & Llave primaria \\
+\hline
+Nombre & VARCHAR(50) & Nombre del actor & NOT NULL \\
+\hline
+Apellido & VARCHAR(50) & Apellido del actor & NOT NULL \\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\begin{table}[ht]
+\centering
+\caption{Tabla: DISPOSITIVO}
+\begin{tabular}{|l|l|p{4.5cm}|p{3.5cm}|}
+\hline
+\textbf{Atributo} & \textbf{Tipo} & \textbf{Descripción} &
+\textbf{Restricciones} \\
+\hline
+DispositivoID & INT & Identificador único del dispositivo & Llave primaria \\
+\hline
+Tipo & VARCHAR(20) & Tipo de dispositivo (smartphone, tablet, laptop, TV) & NOT
+NULL, CHECK (Tipo IN ('smartphone','tablet','laptop','TV')) \\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\begin{table}[ht]
+\centering
+\caption{Tabla: CONSUMO}
+\begin{tabular}{|l|l|p{4.5cm}|p{3.5cm}|}
+\hline
+\textbf{Atributo} & \textbf{Tipo} & \textbf{Descripción} &
+\textbf{Restricciones} \\
+\hline
+ConsumoID & INT & Identificador único del consumo & Llave primaria \\
+\hline
+UsuarioID & INT & ID del usuario que realiza el consumo & Llave foránea, NOT
+NULL \\
+\hline
+ContenidoID & INT & ID del contenido visualizado & NOT NULL \\
+\hline
+TipoContenido & VARCHAR(10) & Tipo de contenido (Pelicula, Episodio) & NOT NULL,
+CHECK (TipoContenido IN ('Pelicula','Episodio')) \\
+\hline
+FechaHoraInicio & DATETIME & Fecha y hora de inicio del consumo & NOT NULL \\
+\hline
+FechaHoraFin & DATETIME & Fecha y hora de fin del consumo & NULL \\
+\hline
+DispositivoID & INT & ID del dispositivo utilizado & Llave foránea, NOT NULL \\
+\hline
+EsRenta & BOOLEAN & Indica si es una renta de película estreno & NOT NULL,
+DEFAULT FALSE \\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\begin{table}[ht]
+\centering
+\caption{Tabla: SESION}
+\begin{tabular}{|l|l|p{4.5cm}|p{3.5cm}|}
+\hline
+\textbf{Atributo} & \textbf{Tipo} & \textbf{Descripción} &
+\textbf{Restricciones} \\
+\hline
+SesionID & INT & Identificador único de la sesión & Llave primaria \\
+\hline
+UsuarioID & INT & ID del usuario que inicia sesión & Llave foránea, NOT NULL \\
+\hline
+DispositivoID & INT & ID del dispositivo utilizado & Llave foránea, NOT NULL \\
+\hline
+FechaHoraInicio & DATETIME & Fecha y hora de inicio de sesión & NOT NULL \\
+\hline
+FechaHoraFin & DATETIME & Fecha y hora de fin de sesión & NULL \\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\begin{table}[ht]
+\centering
+\caption{Tabla: FACTURA}
+\begin{tabular}{|l|l|p{4.5cm}|p{3.5cm}|}
+\hline
+\textbf{Atributo} & \textbf{Tipo} & \textbf{Descripción} &
+\textbf{Restricciones} \\
+\hline
+FacturaID & INT & Identificador único de la factura & Llave primaria \\
+\hline
+UsuarioID & INT & ID del usuario al que se factura & Llave foránea, NOT NULL \\
+\hline
+Fecha & DATE & Fecha de emisión de la factura & NOT NULL \\
+\hline
+MontoCuotaMensual & DECIMAL(10,2) & Monto por cuota de membresía & NOT NULL \\
+\hline
+MontoRentasAdicionales & DECIMAL(10,2) & Monto por rentas adicionales de
+estrenos & NOT NULL, DEFAULT 0 \\
+\hline
+MontoTotal & DECIMAL(10,2) & Monto total de la factura & NOT NULL \\
+\hline
+Estado & VARCHAR(20) & Estado del pago (Al corriente, Deudor) & NOT NULL, CHECK
+(Estado IN ('Al corriente','Deudor')) \\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+% Sección de referencias
+\section{Referencias}
+\begin{itemize}
+    \item Tutorialspoint. (s.f.). \textit{Business Analysis - Requirement
+Gathering Techniques}. Recuperado el 13 de abril de 2025, de
+\url{https://www.tutorialspoint.com/business_analysis/
+business_analysis_requirement_gathering_techniques.htm}
+
+    \item Williams, C. (2018, 11 de septiembre). \textit{Requirements Gathering:
+A Step By Step Approach For A Better User Experience (Part 1)}. UsabilityGeek.
+\url{https://medium.com/usabilitygeek/requirements-gathering-a-step-by-step-
+approach-for-a-better-user-experience-part-1-82be8cad48c2}
+
+    \item Tutorialspoint. (s.f.). \textit{Software Engineering - Software
+Requirements}. Recuperado el 13 de abril de 2025, de
+\url{https://www.tutorialspoint.com/software_engineering/software_requirements.
+htm}
+\end{itemize}
+
+\end{document}
