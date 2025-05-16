@@ -1,0 +1,95 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum} % Para texto de ejemplo (puedes eliminarlo)
+% Remover numeración en secciones
+\setcounter{secnumdepth}{-1} % Place this in the preamble
+
+% Set sans-serif font
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Remover numeración en indice
+\usepackage{titlesec}
+\usepackage{tocloft}
+\renewcommand{\cftsecnumwidth}{0pt}   % Hide section numbers in TOC
+\renewcommand{\cftsecaftersnum}{}     % Remove space after section numbers
+
+% Configuración básica de la página
+\geometry{a4paper, margin=2.5cm}
+
+% Comando para citar
+\newcommand{\miCita}[1]{\cite{#1}}
+
+% Configuración de las referencias
+\usepackage[natbibapa]{apacite}
+\renewcommand{\bibliographytypesize}{\small}
+\AtBeginDocument{\renewcommand{\refname}{Referencias}}
+
+\begin{document}
+\begin{titlepage}
+\end{titlepage}
+
+% ------------------------------------------------------------------------------
+\begin{titlepage}
+\begin{center}
+ {\Huge\bfseries Report 8: Operaciones SQL\\}
+ \vspace{1cm}
+
+ {\huge 18/05/25\\}
+ \vspace{2cm}
+
+ {\Large\bfseries Diego Martín Domínguez Hernández}\\[5pt]
+ \vspace{2cm}
+
+ {\Large Seminario de bases de datos}\\[5pt]
+ \vspace{2cm}
+
+ {\Large Prof. José Antonio Aviña Mendez}\\[5pt]
+\end{center}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introducción}
+Explicar qué operaciones se pueden realizar a una base de datos, usando el lenguaje SQL
+
+\section{Inserción}
+\subsection{Descripción}
+\subsection{Sintaxis}
+
+\section{Actualización}
+\subsection{Descripción}
+\subsection{Sintaxis}
+
+\section{Borrar}
+\subsection{Descripción}
+\subsection{Sintaxis}
+
+\section{Consultas}
+\subsection{Descripción}
+\subsection{Sintaxis}
+
+\section{Crear vistas}
+\subsection{Descripción}
+\subsection{Sintaxis}
+
+\section{Definir Disparadores (triggers)}
+\subsection{Descripción}
+\subsection{Sintaxis}
+
+
+% Sección de referencias
+\begin{thebibliography}{9}
+\bibitem[Ejemplo, 2024]{ejemplo}
+Apellido, N. (2024). \emph{Título del libro}. Editorial.
+
+\bibitem[Teoría, 2023]{teoria}
+Otroautor, A. (2023). Artículo importante. \emph{Revista Científica}, 15(2),
+123-145.
+\end{thebibliography}
+
+\end{document}
