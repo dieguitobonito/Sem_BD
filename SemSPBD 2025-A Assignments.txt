@@ -1,0 +1,360 @@
+Assignments
+José Antonio Aviña Méndez
+CUCEI
+UdeG
+
+Tech Readings
+
+Unidad 1
+Sistemas Gestores de Bases de Datos
+
+Tech Reading 1
+Fundamentos de SGBD (DBMS)
+
+
+Analizar y comprender los conceptos, características, procesos y arquitectura subyacentes en los:
+Sistemas Gestores de Bases de Datos (SGBD) o también conocidos como Database Management Systems (DBMS).
+Tipos de datos permisibles en los mismos.
+(Material de consulta en la sección de Recursos del Google Classroom)
+
+
+
+Unidad 2
+Técnicas, Herramientas y Modelos
+
+Tech Reading 2
+Técnicas de obtención de
+requerimientos de un software
+ 
+
+
+Analizar y comprender Técnicas de obtención de requerimientos de software tales como:
+Análisis de documentación
+Observación
+ Entrevistas
+Encuestas
+Mesas de trabajo
+Tormenta de ideas
+(ver siguiente slide para recursos de consulta en línea)
+
+
+
+Online resources
+https://www.tutorialspoint.com/business_analysis/business_analysis_requirement_gathering_techniques.htm
+https://medium.com/usabilitygeek/requirements-gathering-a-step-by-step-approach-for-a-better-user-experience-part-1-82be8cad48c2
+https://www.tutorialspoint.com/software_engineering/software_requirements.htm
+https://www.linkedin.com/pulse/requirements-gathering-techniques-samgra-malik/
+https://www.softwaretestinghelp.com/requirements-elicitation-techniques/
+https://skillcubator.com/requirements-elicitation-techniques/
+
+
+
+
+
+Reports
+
+Unidad 1
+Sistemas Gestores de Bases de Datos
+
+Report 1
+Fundamentos de SGBD (DBMS)
+
+
+
+Con base en la Tech Reading 1 redactar un reporte sobre los “Conceptos fundamentales, características y tipos de datos permisibles en los DBMS”.
+(Material de consulta en la sección de Recursos del Google Classroom)
+
+
+Report 2
+Infografía de SGBD (DBMS)
+
+Con base en la Tech Reading 1 seleccionar al menos tres SGBD (o DBMS) y crear una infografía con la información asociada a los mismos.
+(Material de consulta en la sección de Recursos del Google Classroom)
+
+Unidad 2
+Técnicas, Herramientas y Modelos
+
+Report 3
+Técnicas de obtención de
+requerimientos de un software
+
+Con base en la Tech Reading 2 construir un mapa conceptual que describa las técnicas analizadas de obtención de requerimientos de un software. 
+
+
+
+Report 4
+Análisis del caso de estudio MetFlix
+
+Con base en el Caso de Estudio 1, MetFlix, construir sus respectivos:
+Diagrama Entidad-Relación (ER)
+Diccionario de Datos (DD)
+
+
+
+Report 5
+Análisis del caso de estudio MetFlix
+
+Con base en el Caso de Estudio 1, MetFlix, transformar su Diagrama Entidad-Relación -creado en el Report 3- a su respectivo Modelo Relacional. 
+
+
+
+Report 6
+Avances del Proyecto Final
+
+Informar sobre los Avances en el desarrollo de su Proyecto Final. 
+Ver indicaciones en Google Classroom. 
+
+
+
+Unidad 3
+Bases de Datos y Sentencias SQL
+
+Report 7
+Bases de Datos y Sentencias SQL
+
+Construir un mapa mental que describa las sentencias SQL, esenciales, para:
+Crear  y eliminar una Base de Datos (BD).
+Respaldar y restaurar una BD.
+Crear y eliminar Tablas.
+Así como mostrar también el uso de la sentencia Alter Table.
+
+
+
+Unidad 4
+Operaciones de actualización, consultas, vistas y disparadores en una BD utilizando SQL
+
+Report 8
+
+
+
+
+Generar un reporte con la investigación acerca de las operaciones que se pueden realizar, sobre una base de datos,  a través del SQL ,tales como: 
+Inserción 
+Actualización 
+Borrar 
+Consultas 
+Crear vistas  
+Definir Disparadores (triggers)
+El reporte debe contener la descripción y sintaxis de las comandos SQL.
+
+
+
+
+Unidad 3
+Bases de Datos y Sentencias SQL
+
+Report 7
+Bases de Datos y Sentencias SQL
+
+Construir un mapa mental que describa las sentencias SQL, esenciales, para:
+Crear  y eliminar una Base de Datos (BD).
+Respaldar y restaurar una BD.
+Crear y eliminar Tablas.
+Así como mostrar también el uso de la sentencia Alter Table.
+
+
+
+Unidad 4
+Operaciones de actualización, consultas, vistas y disparadores en una BD utilizando SQL
+
+Report 8
+
+
+
+
+Generar un reporte con la investigación acerca de las operaciones que se pueden realizar, sobre una base de datos,  a través del SQL ,tales como: 
+Inserción 
+Actualización 
+Borrar 
+Consultas 
+Crear vistas  
+Definir Disparadores (triggers)
+El reporte debe contener la descripción y sintaxis de las comandos SQL.
+
+
+
+
+Unidad 5
+
+CONEXIÓN DE UNA APLICACIÓN CON LENGUAJES DE PROGRAMACIÓN
+
+
+
+Report 9
+
+
+
+Investigar al menos dos Entornos de Desarrollo  para crear, visualmente,  formularios y controladores para la conexión con  Bases de Datos.
+Describir la funcionalidad que estos entornos ofrecen, al usuario, particularmente para el diseño y la implementación de Aplicaciones que que se conectan a bases de datos y realizan transacciones sobre las mismas.
+
+
+
+
+
+Hands-on
+
+Unidad 1
+Sistemas Gestores de Bases de Datos
+
+Hands-on 1
+Instalación y configuración de SGBD (DBMS)
+
+Indicaciones en la siguiente slide
+
+Indicaciones
+Con base en los recursos en línea, sugeridos en la sección “Recursos” del Google Classroom,  revisar la disponibilidad de distribuciones libres y su respectiva demanda para:
+Descargar e instalar en su computador tres SGBD (conocidos también como DBMS). 
+Generar un Reporte que contenga:
+Las características, tipos de datos y requerimientos para la instalación de al menos tres Sistemas Gestores de Bases de Datos (DBMS)”.
+La evidencia de instalación de los SGBD; incluyendo imágenes indicando la secuencia y el procedimiento.
+
+Unidad 3
+Bases de Datos y Sentencias SQL
+
+Hands-on 2
+Crear en el computador, a través de su SGBD, la Base de Datos del  Caso de Estudio 1 (MexFlix)
+
+Indicaciones en las siguientes slides
+
+Especificaciones
+Con base en el Caso de Estudio 1 y el Report 5 crear la Base de Datos -a través de su SGBD en el computador- para el Caso de Estudio 1 (MexFlix). La creación de la BD se limitará, exclusivamente, a realizar las siguientes acciones a través de sentencias SQL: 
+Crear la BD.
+Crear las Tablas respectivas (basadas en su Report 5)
+Realizar, al menos, diez modificaciones a su BD (tablas) a través de la sentencia ALTER TABLE.
+Respaldar la BD.
+Entregable: ver siguiente slide.
+
+
+Especificaciones
+Entregable:
+Subir como evidencia un archivo (formato PDF) que contenga la siguiente información:
+Por cada sentencia SQL, por ejecutar, para crear la BD del Caso de Estudio 1:
+Enumerar la sentencia.
+Explicar, brevemente, la acción por realizar. 
+Proporcionar la sintaxis de la sentencia (tal cual como será capturada y ejecutada en su SGBD).
+Incluir al menos cinco imágenes (screenshots de su computador) que muestren las tablas creadas y/o actualizadas.
+Incluir en su archivo (formato APA):
+Portada con su nombre completo, materia y  fecha.
+No es necesario incluir introducción, ni conclusiones.
+De ser necesario pueden incluir Referencias en formato APA.
+
+
+
+Hands-on 3
+Elaborar un Prototipo inicial de la BD del Caso de Estudio 1 utilizando una herramienta para crear Mokups
+
+
+
+Unidad 4
+Operaciones de actualización, consultas, vistas y disparadores en una BD utilizando SQL
+
+Hands-on 4
+
+
+Con base en el Report 8 realizar operaciones, sobre la Base de Datos MexFlix creada en el Hands-on 2, tales como:
+Inserción (agregar un número reducido de récords que permitan realizar el resto de las operaciones).
+Consultas
+Actualización
+Crear vistas
+Definir disparadores (triggers)
+Respaldo de la base de datos
+Guardar, en un archivo de texto,  cada una de las operaciones  SQL realizadas sobre la Base de Datos MexFlix. 
+(Guardar solo la expresión SQL y no el  resultado proporcionado por el SGBD).
+
+
+
+Casos de Estudio
+
+Caso de Estudio 1
+Plataforma de video en demanda MexFlix
+
+Plataforma de video en demanda MexFlix
+Se desea diseñar una Base De Datos Relacional que almacene y gestione la información sobre usuarios  -y su consumo- que registran en una Plataforma de vídeo en demanda (e.g., AppleTV, NETFLIX, Prime Video, HBO).
+ Al registrarse, los usuarios pueden seleccionar tres tipos diferentes de membresía con su respectivo tipo, costo y fecha de duración (mínimo un mes):
+Standard 
+Extendida
+Premium 
+Los usuarios, al registrarse, deben proporcionar nombre completo, RFC, dirección de casa/depto, correo electrónico y datos de una tarjeta de crédito o débito válidas (VISA, MASTERCARD y American Express).
+Los usuarios pueden conectarse a la plataforma y ver películas o series a través de un smartphone, tablet, laptop y pantalla de TV. 
+Los usuarios además de pagar una cuota mensual, por su tipo de membresía, pueden también pagar cargos extras por rentar películas consideradas como estrenos. 
+Se desea también almacenar información relacionada tanto de series como películas: título, actores, duración, fecha de estreno y categoría (acción, suspenso, terror, documentales, policiacas, conciertos, etcétera). 
+
+Aplicación para Fintech
+El diseño de la base de datos debe posibilitar la consulta de:
+Usuarios por tipo de membresía
+Películas, series, y próximos estrenos disponibles en la plataforma.
+¿Qué tipos (género) de películas y/o series consume el usuario durante el mes?
+Todas las películas y/o series visualizadas (consumidas) durante el mes por el usuario.
+Consumo total del usuario (cargo mensual + rentas adicionales).
+Saldo actual del usuario (al corriente o deudor).
+Tiempo que pasa el usuario conectado a la plataforma (durante el mes).
+¿Desde qué dispositivos se conecta a la plataforma el usuario?
+
+Videos
+
+Video 1
+Bases de Datos y Sentencias SQL
+
+Realizar un video donde muestren, en su computador y SGBD, el uso -y ejecución-  de las sentencias SQL, analizadas el Report 7.
+
+
+
+
+Proyecto Final
+
+Proyecto Final
+Fashion: Equipos de dos estudiantes
+
+La actual actividad consiste en: 
+Definir un Proyecto Final por desarrollar durante el presente semestre.  
+La creación de un Diagrama de Gantt que involucre el conjunto de tareas específicas, así como lo tiempos respectivos, para la realización del Proyecto Final. 
+(En la presenta Unidad 1, sólo se entrega: Definición y Diagrama de Gantt.)
+(ver siguiente slide para especificaciones)
+
+
+
+Specs
+El Proyecto final  se puede elaborar de forma individual o se pueden conformar equipos con un máximo de dos estudiantes. 
+Incluir Diagrama de Gantt.
+Las etapas de Análisis y Diseño de la Bases de Datos (BD) deben incluir:
+Modelo Entidad-Relación o Entidad-Relación Extendido según corresponda.
+Modelo Relacional.
+Diccionario de datos.
+Deberán  verificar que el modelado propuesto cumpla con al menos las tres primeras formas normales.
+
+
+Specs
+La creación de la Base de Datos se puede realizar directamente a través de:
+Un Sistema Gestor de Base de Datos.
+ ó … empleando una IDE para dichos propósitos: https://sqlpad.io/tutorial/top-sql-ides/
+La creación de un Front-end para la BD es opcional (i.e. Interfaz de Usuario/Formularios para realizar transacciones). 
+La implementación de código -en algún lenguaje  de programación-  para la conexión a la BD  y la realización de transacciones es también opcional.  
+La BD deberá ser llenada con los datos suficientes para poder realizar transacciones que permitan: Agregar, consultar,  actualizar y eliminar… datos.
+
+
+
+Reporte 
+del 
+Proyecto Final
+Formato y Contenido
+
+Specs
+El reporte se entrega (sube en formato PDF/APA).
+Estructura General:
+Portada: Tema, fecha, nombre de la materia,  nombre completo del alumn@(s)
+Índice.
+Introducción (breve descripción del proyecto).
+Desarrollo del proyecto: emplear secciones y subsecciones por cada tópico abordado.
+Imágenes con descripción y/o referencia bibliográfica (APA).
+Conclusiones 
+
+Specs
+El reporte debe incluir:
+Gantt
+Diccionario de datos
+Diagrama E-R
+Modelo Relacional
+Diagrama de flujo
+Mockups
+Respaldo de la BD (en texto plano) 
+Demás recursos que consideren necesarios y que sumen a la comprensión de su Proyecto.
