@@ -27,6 +27,22 @@
 \renewcommand{\bibliographytypesize}{\small}
 \AtBeginDocument{\renewcommand{\refname}{Referencias}}
 
+% Paquetes para escribir código SQL
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+  language=SQL,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color{red!70!black},
+  commentstyle=\color{gray}\itshape,
+  columns=flexible,
+  breaklines=true,
+  showstringspaces=false,
+  backgroundcolor=\color{gray!10},
+  frame=single
+}
+
 \begin{document}
 \begin{titlepage}
 \end{titlepage}
@@ -55,41 +71,113 @@
 \newpage
 
 \section{Introducción}
-Explicar qué operaciones se pueden realizar a una base de datos, usando el lenguaje SQL
+Explicar qué operaciones se pueden realizar a una base de datos, usando el lenguaje SQL.
 
 \section{Inserción}
 \subsection{Descripción}
+Permite agregar nuevos registros a una tabla de la bse de datos creada.
 \subsection{Sintaxis}
+\begin{lstlisting}
+INSERT INTO nombre_tabla (columna1, columna2, ...)
+VALUES (valor1, valor2, ...);
+\end{lstlisting}
+\subsubsection{Ejemplo}
+\begin{lstlisting}
+INSERT INTO usuarios (nombre, correo, membresia)
+VALUES ('Juan Perez', 'juan@mail.com', 'Premium');
+\end{lstlisting}
 
 \section{Actualización}
 \subsection{Descripción}
+Modifica los valores de uno o más campos de registros en una tabla.
 \subsection{Sintaxis}
+\begin{lstlisting}
+UPDATE nombre_tabla
+SET columna1 = valor1, columna2 = valor2
+WHERE condicion;
+\end{lstlisting}
+\subsubsection{Ejemplo}
+\begin{lstlisting}
+UPDATE usuarios
+SET membresia = 'Standard'
+WHERE nombre = 'Juan Perez';
+\end{lstlisting}
 
 \section{Borrar}
 \subsection{Descripción}
+Elimina uno o varios registros de una tabla según la condición dada.
 \subsection{Sintaxis}
+\begin{lstlisting}
+DELETE FROM nombre_tabla
+WHERE condicion;
+\end{lstlisting}
+\subsubsection{Ejemplo}
+\begin{lstlisting}
+DELETE FROM usuarios
+WHERE nombre = 'Juan Perez';
+\end{lstlisting}
 
 \section{Consultas}
 \subsection{Descripción}
+Permite consultar y recuperar información almacenada en una o más tablas.
 \subsection{Sintaxis}
+\begin{lstlisting}
+SELECT columna1, columna2
+FROM nombre_tabla
+WHERE condicion;
+\end{lstlisting}
+\subsubsection{Ejemplo}
+\begin{lstlisting}
+SELECT nombre, membresia
+FROM usuarios
+WHERE membresia = 'Premium';
+\end{lstlisting}
 
 \section{Crear vistas}
 \subsection{Descripción}
+Una vista es una tabla virtual basada en el resultado de una consulta \textit{SELECT}.
 \subsection{Sintaxis}
+\begin{lstlisting}
+CREATE VIEW nombre_vista AS
+SELECT columna1, columna2
+FROM nombre_tabla
+WHERE condicion;
+\end{lstlisting}
+\subsubsection{Ejemplo}
+\begin{lstlisting}
+CREATE VIEW vista_usuarios_premium AS
+SELECT nombre, correo
+FROM usuarios
+WHERE membresia = 'Premium';
+\end{lstlisting}
 
 \section{Definir Disparadores (triggers)}
 \subsection{Descripción}
+Es un conjunto de instrucciones que se ejecutan automáticamente en respuesta a ciertos eventos (\textit{INSERT, UPDATE, DELETE})
 \subsection{Sintaxis}
+\begin{lstlisting}
+CREATE TRIGGER nombre_trigger
+AFTER INSERT ON nombre_tabla
+FOR EACH ROW
+BEGIN
+   -- instrucciones
+END;
+\end{lstlisting}
+\subsubsection{Ejemplo}
+\begin{lstlisting}
+CREATE TRIGGER registrar_insercion_usuario
+AFTER INSERT ON usuarios
+FOR EACH ROW
+BEGIN
+   INSERT INTO log_usuarios (usuario_id, fecha)
+   VALUES (NEW.id, NOW());
+END;
+\end{lstlisting}
 
-
+\
 % Sección de referencias
-\begin{thebibliography}{9}
-\bibitem[Ejemplo, 2024]{ejemplo}
-Apellido, N. (2024). \emph{Título del libro}. Editorial.
-
-\bibitem[Teoría, 2023]{teoria}
-Otroautor, A. (2023). Artículo importante. \emph{Revista Científica}, 15(2),
-123-145.
-\end{thebibliography}
-
+\section{Referencias}
+\begin{itemize}
+    \item W3Schools. \emph{SQL Tutorial}. Recuperado de \url{https://www.w3schools.com/sql/}
+\end{itemize}
 \end{document}
