@@ -1,0 +1,134 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum} % Para texto de ejemplo (puedes eliminarlo)
+% Remover numeración en secciones
+\setcounter{secnumdepth}{-1} % Place this in the preamble
+
+% Set sans-serif font
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Remover numeración en indice
+\usepackage{titlesec}
+\usepackage{tocloft}
+\renewcommand{\cftsecnumwidth}{0pt}   % Hide section numbers in TOC
+\renewcommand{\cftsecaftersnum}{}     % Remove space after section numbers
+
+% Links
+\usepackage{hyperref}
+
+% Configuración básica de la página
+\geometry{a4paper, margin=2.5cm}
+
+% Comando para citar
+\newcommand{\miCita}[1]{\cite{#1}}
+
+% Configuración de las referencias
+\usepackage[natbibapa]{apacite}
+\renewcommand{\bibliographytypesize}{\small}
+\AtBeginDocument{\renewcommand{\refname}{Referencias}}
+
+\begin{document}
+\begin{titlepage}
+\end{titlepage}
+
+% ------------------------------------------------------------------------------
+\begin{titlepage}
+\begin{center}
+ {\Huge\bfseries Report 9: Entornos de desarrollo\\}
+ \vspace{1cm}
+
+ {\huge 18/05/25\\}
+ \vspace{2cm}
+
+ {\Large\bfseries Diego Martín Domínguez Hernández}\\[5pt]
+ \vspace{2cm}
+
+ {\Large Seminario de bases de datos}\\[5pt]
+ \vspace{2cm}
+
+ {\Large Prof. José Antonio Aviña Mendez}\\[5pt]
+\end{center}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Herramientas investigadas}
+\subsection{Visual Studio}
+Visual Studio es un entorno de desarrollo integrado (IDE) que permite desarrollar aplicaciones de escritorio utilizando Windows Forms.
+\subsubsection{Funcionalidades}
+\begin{description}
+ \item[Diseño visual de formularios] Utiliza un diseñador el cual puedes arrastrar y soltar para crear interfaces gráficas con controladores como botones, cuadros de texto, listas, entre otros.
+ \item[Conexión a bases de datos] Permite crear y administrar bases de datos locales, añadir tablas y definir relaciones mediante el diseñador de tablas.
+ \item[Asistentes de conexión] Ofrece asistentes para conectar aplicaciones a diversas fuentes de datos, incluyendo bases de datos locales y servicios en línea.
+ \item[Manipulación de datos] Proporciona herramientas para ejecutar consultas, editar datos, y trabajar con procedimientos almacenados directamente desde el IDE.
+\end{description}
+
+\subsection{Delphi}
+También conocido como RAD Studio, es un entorno de desarrollo que ofrece herramientas para crear aplicaciones nativas multiplataforma con potentes capacidades de diseño visual y conectividad a bases de datos.
+
+\subsubsection{Funcionalidades}
+\begin{description}
+ \item[Diseño visual de interfaces] Permite diseñar formularios mediante arrastrar y soltar componentes.
+ \item[LiveBindings Designer] Una herramienta visual para vincular elementos de la interfaz con fuentes de datos, mostrando datos en tiempo de diseño y ejecución sin necesidad de escribir código.
+ \item[FireDAC] Es una biblioteca de acceso a datos que proporciona conectividad nativa y de alta velocidad a más de 20 bases de datos, incluyendo InterBase, SQLITE, MySQL, SQL Server, entre otras.
+ \item[Explorador de datos] Incluye una herramienta que permite navegar rápidamente por tablas, vistas y procedimientos almacenados de las bases de datos, mostrando datos en vivo.
+ \item[Soporte para transacciones] Facilita la ejecución de operaciones de transacciones controladas, asegurando la consistencia y confiabilidad de los datos.
+\end{description}
+
+\subsection{Budibase}
+Es una plataforma de desarrollo de apllicaciones de código abierto que permite a los usuarios crear aplicaciones web personalizadas de manera rápida y sencilla, sin necesidad de escribir código extensivo.
+\subsubsection{Funcionalidades}
+\begin{description}
+ \item[Diseño visual de formularios] Ofrece un constructor de formularios de arrastrar y soltar.
+ \item[Conexión a bases de datos] Permite conectar con diversas fuentes de datos, incluyendo bases de datos SQL como MySQL y PostgreSQL, así como APIs externas.
+ \item [Automatización de flujos de trabajo] Incluye herramientas para automatizar procesos, como notificaciones por correo electrónico o integraciones con servicios como Slack.
+ \item [Seguridad y autenticación] Incorpora mecanismos de autenticación y control de acceso basados en roles para proteger las aplicaciones desarrolladas.
+\end{description}
+
+\newpage
+
+\begin{table}[]
+\centering
+\caption{Comparativa de entornos de desarrollo para formularios y bases de datos}
+\begin{tabular}{|p{3cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
+\hline
+\textbf{Característica} & \textbf{Visual Studio} & \textbf{Delphi/RAD Studio} & \textbf{Budibase} \\
+\hline
+\textbf{Licencia} & Propietaria (Microsoft) & Propietaria (Embarcadero) & Código abierto (GPL v3) \\
+\hline
+\textbf{Diseño visual de formularios} & Sí (Windows Forms, WPF, ASP.NET) & Sí (VCL, FMX) & Sí (constructor de arrastrar y soltar) \\
+\hline
+\textbf{Conexión a bases de datos} & SQL Server, MySQL, Oracle, etc. & FireDAC: MySQL, PostgreSQL, SQLite, etc. & PostgreSQL, MySQL, MongoDB, REST APIs, etc. \\
+\hline
+\textbf{Soporte para transacciones} & Sí (ADO.NET, Entity Framework) & Sí (FireDAC) & Sí (depende de la base de datos conectada) \\
+\hline
+\textbf{Automatización de flujos de trabajo} & Limitado (requiere código adicional) & Limitado (requiere programación) & Sí (automatizaciones visuales integradas) \\
+\hline
+\textbf{Despliegue} & Windows, Azure & Windows, macOS, Linux, iOS, Android & Web, autoalojado (Docker, Kubernetes) \\
+\hline
+\textbf{Requisitos de programación} & Alto (C\#, VB.NET) & Alto (Object Pascal) & Bajo (enfoque low-code/no-code) \\
+\hline
+\textbf{Ideal para} & Aplicaciones empresariales complejas & Aplicaciones multiplataforma con alto rendimiento & Herramientas internas y aplicaciones web rápidas \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Referencias}
+\begin{itemize}
+    \item Microsoft. (2022). \textit{Accessing data in Visual Studio}. Microsoft Learn. \url{https://learn.microsoft.com/en-us/visualstudio/data-tools/accessing-data-in-visual-studio?view=vs-2022}
+
+    \item Embarcadero Technologies. (2023). \textit{Using databases}. Embarcadero DocWiki. \url{https://docwiki.embarcadero.com/RADStudio/Alexandria/en/Using_Databases}
+
+    \item Budibase Ltd. (2024). \textit{Budibase: Build internal tools in minutes}. \url{https://www.budibase.com/}
+
+    \item Budibase Ltd. (2024). \textit{Budibase documentation}. \url{https://docs.budibase.com/}
+
+    \item Budibase Ltd. (2024). \textit{Budibase GitHub repository}. \url{https://github.com/Budibase/budibase}
+\end{itemize}
+
+\end{document}
